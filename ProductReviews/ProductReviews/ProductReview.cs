@@ -75,6 +75,19 @@ namespace ProductReviews
             }
             return nameList;
         }
+        // UC 5: Retrieving Data By product id
+        public string RetrieveDataByProductID()
+        {
+            string result = "";
+            AddProductReview();
+            var productList = ProductList.Select(product => new { ProductId = product.ProductID, Review = product.Review }).ToList();
+            foreach (var element in productList)
+            {
+                Console.WriteLine("ProductId: " + element.ProductId + "\tReview: " + element.Review);
+                result += element.ProductId + " ";
+            }
+            return result;
+        }
         //Display The Content
         public void DisplayTheList()
         {
