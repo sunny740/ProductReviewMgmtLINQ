@@ -41,6 +41,15 @@ namespace ProductReviews
 
             return ProductList.Count;
         }
+        //UC2-TopThreeRecords
+        public int RetrieveTopThreeRecords()
+        {
+            AddProductReview();
+            var res = (from product in ProductList orderby product.Rating descending select product).Take(3).ToList();
+            DisplayTheList();
+            return res.Count;
+        }
+        //Display The Content
         public void DisplayTheList()
         {
             foreach (Product product in ProductList)

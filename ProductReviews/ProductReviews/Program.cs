@@ -8,6 +8,7 @@ namespace ProductReviews
             ProductReview productReview = new ProductReview();
             productReview.AddProductReview();
             productReview.DisplayTheList();
+            productReview.RetrieveTopThreeRecords();
         }
     }
 }

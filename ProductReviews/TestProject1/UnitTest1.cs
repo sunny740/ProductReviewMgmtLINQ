@@ -23,5 +23,12 @@ namespace Product_Review_Management
             int actual = product.AddProductReview();
             Assert.AreEqual(expected, actual);
         }
+        [Test]
+        public void TestMethodForRetrieveTopThreeRecord()
+        {
+            int expected = 3;
+            var actual = product.RetrieveTopThreeRecords();
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
