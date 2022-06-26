@@ -88,7 +88,7 @@ namespace ProductReviews
             }
             return result;
         }
-        // UC 6: Skip Top Five records
+        // UC 6 & 7: Skip Top Five records
         public string SkipTop5Record()
         {
             AddProductReview();

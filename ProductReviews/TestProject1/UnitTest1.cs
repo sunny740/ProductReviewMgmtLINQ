@@ -53,7 +53,7 @@ namespace Product_Review_Management
             string actual = product.RetrieveDataByProductID();
             Assert.AreEqual(expected, actual);
         }
-        /// TC 6: Skip top Five records
+        /// TC 6 & 7: Skip top Five records
         [Test]
         public void Given_SkipTopFiveRecords()
         {
