@@ -1,0 +1,13 @@
+﻿using System;
+namespace ProductReviews
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            ProductReview productReview = new ProductReview();
+            productReview.AddProductReview();
+            productReview.DisplayTheList();
+        }
+    }
+}
