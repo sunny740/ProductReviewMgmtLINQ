@@ -9,6 +9,7 @@ namespace ProductReviews
             productReview.AddProductReview();
             productReview.DisplayTheList();
             productReview.RetrieveTopThreeRecords();
+            productReview.RetrieveAllRecords();
         }
     }
 }

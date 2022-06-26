@@ -49,6 +49,19 @@ namespace ProductReviews
             DisplayTheList();
             return res.Count;
         }
+        //UC3-all records
+        public string RetrieveAllRecords()
+        {
+            AddProductReview();
+            string nameList = "";
+            var productList = (from product in ProductList where product.Rating > 3 && (product.ProductID == 1 || product.ProductID == 4 || product.ProductID == 9) select product);
+            foreach (var product in productList)
+            {
+                nameList += product.UserID + " ";
+                Console.WriteLine("ProductId: {0} || UserId: {1} || Review: {2} || Rating: {3} || IsLike:{4}\n", product.ProductID, product.UserID, product.Review, product.Rating, product.IsLike);
+            }
+            return nameList;
+        }
         //Display The Content
         public void DisplayTheList()
         {

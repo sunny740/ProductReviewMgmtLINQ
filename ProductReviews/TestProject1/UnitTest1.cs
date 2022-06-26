@@ -24,11 +24,19 @@ namespace Product_Review_Management
             Assert.AreEqual(expected, actual);
         }
         [Test]
-        public void TestMethodForRetrieveTopThreeRecord()
+        public void RetrieveTopThreeRecord()
         {
             int expected = 3;
             var actual = product.RetrieveTopThreeRecords();
             Assert.AreEqual(expected, actual);
         }
+        [Test]
+        public void CheckRetrieveAllRecords()
+        {
+            string expected = "7 3 3 15 7 ";
+            string actual = product.RetrieveAllRecords();
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }
