@@ -62,6 +62,19 @@ namespace ProductReviews
             }
             return nameList;
         }
+        // UC 4: Retrieve count By ProductID
+        public string CountByProductID()
+        {
+            string nameList = "";
+            AddProductReview();
+            var productList = ProductList.GroupBy(x => x.ProductID).Select(a => new { ProductID = a.Key, count = a.Count() });
+            foreach (var element in productList)
+            {
+                Console.WriteLine("ProductId " + element.ProductID + " " + "Count " + " " + element.count);
+                nameList += element.count + " ";
+            }
+            return nameList;
+        }
         //Display The Content
         public void DisplayTheList()
         {

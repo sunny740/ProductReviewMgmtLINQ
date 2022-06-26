@@ -10,6 +10,7 @@ namespace ProductReviews
             productReview.DisplayTheList();
             productReview.RetrieveTopThreeRecords();
             productReview.RetrieveAllRecords();
+            productReview.CountByProductID();
         }
     }
 }

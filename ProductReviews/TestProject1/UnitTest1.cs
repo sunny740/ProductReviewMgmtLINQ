@@ -37,6 +37,13 @@ namespace Product_Review_Management
             string actual = product.RetrieveAllRecords();
             Assert.AreEqual(expected, actual);
         }
-
+        /// TC 4: Retrive the Data count By productId
+        [Test]
+        public void TestMethodForCountByProductId()
+        {
+            string expected = "6 4 4 3 4 1 2 1 ";
+            string actual = product.CountByProductID();
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
