@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -99,6 +100,32 @@ namespace ProductReviews
                 nameList += element.ProductID + " ";
             }
             return nameList;
+        }
+        // UC 8: Create Data Table
+        public int CreateDataTable()
+        {
+            AddProductReview();
+            productdt = new DataTable();
+            productdt.Columns.Add("ProductId", typeof(Int32));
+            productdt.Columns.Add("UserId", typeof(Int32));
+            productdt.Columns.Add("Rating", typeof(Int32));
+            productdt.Columns.Add("Review", typeof(string));
+            productdt.Columns.Add("IsLike", typeof(bool));
+
+            foreach (var data in ProductList)
+            {
+                productdt.Rows.Add(data.ProductID, data.UserID, data.Rating, data.Review, data.IsLike);
+            }
+
+            return productdt.Rows.Count;
+        }
+        /// TC 8: Adding a Productreview details in Data Table
+        [Test]
+        public void GivenCreateFunctionforDT_returnCountofListCreated()
+        {
+            int expected = 25;
+            int actual = product.CreateDataTable();
+            Assert.AreEqual(expected, actual);
         }
         //Display The Content
         public void DisplayTheList()

@@ -61,5 +61,16 @@ namespace Product_Review_Management
             string actual = product.SkipTop5Record();
             Assert.AreEqual(expected, actual);
         }
+        /// TC 8: Adding a Productreview details in Data Table
+        [Test]
+        public void Given_CreateDataTable()
+        {
+            int expected = 25;
+            int actual = product.CreateDataTable();
+            Assert.AreEqual(expected, actual);
+        }
+
+
+
     }
 }

@@ -13,6 +13,7 @@ namespace ProductReviews
             productReview.CountByProductID();
             productReview.RetrieveDataByProductID();
             productReview.SkipTop5Record();
+            productReview.CreateDataTable();
         }
     }
 }
