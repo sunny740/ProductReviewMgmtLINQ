@@ -119,13 +119,19 @@ namespace ProductReviews
 
             return productdt.Rows.Count;
         }
-        /// TC 8: Adding a Productreview details in Data Table
-        [Test]
-        public void GivenCreateFunctionforDT_returnCountofListCreated()
+        // UC 9: Retrieve the data whose column islike has true using DataTable
+        public string RetrieveAllTheData()
         {
-            int expected = 25;
-            int actual = product.CreateDataTable();
-            Assert.AreEqual(expected, actual);
+            List<Product> ProductList = new List<Product>();
+            CreateDataTable();
+            string nameList = "";
+            var res = from product in productdt.AsEnumerable() where product.Field<bool>("IsLike") == true select product;
+            foreach (var p in res)
+            {
+                Console.WriteLine("{0} | {1} | {2} | {3} | {4} ", p["ProductId"], p["UserId"], p["Rating"], p["Review"], p["IsLike"]);
+                nameList += p["UserId"] + " ";
+            }
+            return nameList;
         }
         //Display The Content
         public void DisplayTheList()

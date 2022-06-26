@@ -69,8 +69,14 @@ namespace Product_Review_Management
             int actual = product.CreateDataTable();
             Assert.AreEqual(expected, actual);
         }
-
-
-
+        /// TC 9: Retrieve the records whose column islike has true using DataTable
+        /// </summary>
+        [Test]
+        public void TestMethodForReturnsOnlyIsLikee()
+        {
+            string expected = "1 10 1 6 7 8 4 9 10 9 3 15 1 10 7 8 10 ";
+            string actual = product.RetrieveAllTheData();
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
