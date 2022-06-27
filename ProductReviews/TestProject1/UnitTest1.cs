@@ -85,5 +85,13 @@ namespace Product_Review_Management
             string actual = product.AverageRatingOfEachProductId();
             Assert.AreEqual(expected, actual);
         }
+        /// TC 11: Returns All Records From The List
+        [Test]
+        public void TestMethodForReviewAllRecords()
+        {
+            string expected = "2 3 15 9 ";
+            string actual = product.ReturnsAllRecordsFromTheList();
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
