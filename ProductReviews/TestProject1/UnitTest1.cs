@@ -70,12 +70,19 @@ namespace Product_Review_Management
             Assert.AreEqual(expected, actual);
         }
         /// TC 9: Retrieve the records whose column islike has true using DataTable
-        /// </summary>
         [Test]
         public void TestMethodForReturnsOnlyIsLikee()
         {
             string expected = "1 10 1 6 7 8 4 9 10 9 3 15 1 10 7 8 10 ";
             string actual = product.RetrieveAllTheData();
+            Assert.AreEqual(expected, actual);
+        }
+        /// TC 10: Average of rating ProductId
+        [Test]
+        public void TestMethodAverageofRating_ProductID()
+        {
+            string expected = "3.3 3.2 2 5 2 1 3 1 ";
+            string actual = product.AverageRatingOfEachProductId();
             Assert.AreEqual(expected, actual);
         }
     }

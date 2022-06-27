@@ -14,6 +14,7 @@ namespace ProductReviews
             productReview.RetrieveDataByProductID();
             productReview.SkipTop5Record();
             productReview.CreateDataTable();
+            productReview.AverageRatingOfEachProductId();
         }
     }
 }

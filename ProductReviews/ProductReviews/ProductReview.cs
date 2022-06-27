@@ -133,6 +133,19 @@ namespace ProductReviews
             }
             return nameList;
         }
+        //UC 10: Average of Rating of Each ProductId
+        public string AverageRatingOfEachProductId()
+        {
+            string result = "";
+            CreateDataTable();
+            var res = from product in productdt.AsEnumerable() group product by product.Field<int>("ProductId") into temp select new { productid = temp.Key, Average = Math.Round(temp.Average(x => x.Field<int>("Rating")), 1) };
+            foreach (var r in res)
+            {
+                Console.WriteLine("Product id: {0} Average Rating: {1}", r.productid, r.Average);
+                result += r.Average + " ";
+            }
+            return result;
+        }
         //Display The Content
         public void DisplayTheList()
         {
