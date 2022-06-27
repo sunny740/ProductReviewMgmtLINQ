@@ -93,5 +93,13 @@ namespace Product_Review_Management
             string actual = product.ReturnsAllRecordsFromTheList();
             Assert.AreEqual(expected, actual);
         }
+        /// TC 12: Retrieve Records By UseruserID=10 
+        [Test]
+        public void TestMethodRetrieveRecordsByUser()
+        {
+            string expected = "2 2 2 2 3 ";
+            string actual = product.RetrieveRecordsByUserID();
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

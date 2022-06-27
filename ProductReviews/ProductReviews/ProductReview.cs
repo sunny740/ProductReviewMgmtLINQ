@@ -161,6 +161,19 @@ namespace ProductReviews
             }
             return nameList;
         }
+        //UC 12: Retrieve Records By User
+        public string RetrieveRecordsByUser()
+        {
+            CreateDataTable();
+            string nameList = "";
+            var res = (from product in productdt.AsEnumerable() where product.Field<Int32>("UserId") == 10 orderby product.Field<int>("Rating") select product).ToList();
+            foreach (var p in res)
+            {
+                Console.WriteLine("{0} | {1} | {2} | {3} | {4} ", p["ProductId"], p["UserId"], p["Rating"], p["Review"], p["IsLike"]);
+                nameList += p["Rating"] + " ";
+            }
+            return nameList;
+        }
         //Display The Content
         public void DisplayTheList()
         {
